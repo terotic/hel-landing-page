@@ -1,0 +1,148 @@
+@charset "utf-8";
+@import "normalize";
+@import "breakpoint";
+
+@font-face {
+  font-family: 'helsinki-avoin';
+  src: url('../fonts/helsinkiavoinsans-bold-webfont.woff2') format('woff2'), url('../fonts/helsinkiavoinsans-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'helsinki-avoin';
+  src: url('../fonts/helsinkiavoinsans-bolditalic-webfont.woff2') format('woff2'), url('../fonts/helsinkiavoinsans-bolditalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'helsinki-avoin';
+  src: url('../fonts/helsinkiavoinsans-italic-webfont.woff2') format('woff2'), url('../fonts/helsinkiavoinsans-italic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'helsinki-avoin';
+  src: url('../fonts/helsinkiavoinsans-regular-webfont.woff2') format('woff2'), url('../fonts/helsinkiavoinsans-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+$helsinkiyellow: #ffc72b;
+$helsinkiblue: #005eb8;
+$helsinkiturquoise: #05c2de;
+$helsinkired: #d10057;
+
+$medium-width: 720px;
+$large-width: 1200px;
+
+body, html {
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.3;
+
+   @include breakpoint($medium-width) {
+    font-size: 18px;
+  }
+
+  @include breakpoint($large-width) {
+    font-size: 30px;
+    line-height: 1.4;
+  }
+}
+
+body {
+  background: $helsinkiblue;
+  color: #fff;
+  font-family: "helsinki-avoin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.lander-content {
+  position: absolute;
+  padding: 12px;
+  @include breakpoint($large-width) {
+    padding: 48px;;
+  }
+}
+
+.credits {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.5em;
+  transform: rotate(270deg) ;
+  transform-origin: 100% 100%;
+}
+
+h1 {
+  font-size: 38px;
+  margin-top: 0;
+  line-height: 1;
+
+   @include breakpoint($medium-width) {
+    font-size: 60px;
+  }
+
+  @include breakpoint($large-width) {
+    font-size: 72px;;
+  }
+}
+.lander {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.helsinki-branding--text {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  text-align: right;
+  color: $helsinkiblue;
+  font-size: 12px;
+  line-height: 1.3;
+   @include breakpoint($medium-width) {
+    font-size: 14px;
+  }
+
+  @include breakpoint($large-width) {
+    font-size: 32px;
+    line-height: 1.4;
+    bottom: 48px;
+    right: 48px;
+  }
+  
+  a {
+    color: $helsinkiblue;
+    text-decoration: none;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.helsinki-branding--seal {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  img {
+    height: 5em;
+  }
+
+ @include breakpoint($medium-width) {
+   img {
+    height: 6em;
+   }
+  }
+
+  @include breakpoint($large-width) {
+    bottom: 48px;
+    right: 48px;
+    img {
+      height: 7em;
+    }
+  }
+}
